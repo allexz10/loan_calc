@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Calc</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <div class="calc">
+      <div class="calc__header">
+        <h3 class="header-logo__title">Syndicate</h3>
+        <h3 class="header-logo__subtitle">Banka</h3>
+      </div>
+      <h1 class="leasing__title">Auto līzings bez ķīlas no 9% gadā!</h1>
+      <form class="leasing__calc-content">
+        <div class="leasing__calc-text">Summa:</div>
+        <div class="input-wrapper">
+          <div class="min__value">750€</div>
+          <input
+            class="range__slider"
+            id="loan-summ-range"
+            min="750"
+            max="7500"
+            type="range"
+            value="750"
+          />
+          <div class="max__value">7500€</div>
+        </div>
+        <div class="wrapper__summ">
+          <div class="summ__text">Summa:</div>
+          <input
+            class="summ"
+            id="loan-summ"
+            type="number"
+            min="750"
+            max="7500"            
+            maxlength="4"
+            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+          />
+        </div>
+        <div class="leasing__calc-text">Termiņš:</div>
+        <div class="input-wrapper">
+          <div class="min__value">3</div>
+          <input
+            class="range__slider"
+            id="credit-term-range"            
+            step="3"
+            min="3"
+            max="72"
+            type="range"
+            value="3"
+          />                   
+          <div class="max__value">72</div>
+        </div>
+        <div class="wrapper__summ">
+          <div class="summ__text month__text">Termiņš:</div>
+          <input
+            class="summ summ__month"
+            id="credit-term"
+            type="number"
+            min="3"
+            max="72"            
+            maxlength="2"
+            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+          />
+        </div>        
+      </form>
+      <div class="total__credit-summ">
+        Kredīta summa
+        <span class="total__credit-summ--value" id="total-credit-summ"></span>
+      </div>
+      <div class="monthly__payment" >
+        Ikmēneša maksājums<br>
+        <span class="monthly__payment-value" id="monthly-payment"></span>
+      </div>
+      <div class="button">
+        <a class="button__link" href="#">Pieteikties</a>
+      </div>
+      <p class="footer__text">
+        Kalkulatora aprēķinātie dati ir informatīvi un sniedz priekšstatu par
+        ikmēneša maksājumu. Aizņemies atbildīgi, izvērtējot iespējas atmaksāt
+        kredītu.
+      </p>
+    </div>
+    <script src="js/main.js"></script>
+  </body>
+</html>

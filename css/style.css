@@ -1,0 +1,257 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit;
+  display: inline-block;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input[type="number"]:hover,
+input[type="number"]:focus {
+  -moz-appearance: number-input;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.calc {
+  width: 300px;
+  height: 600px;
+  background-color: #f8f8f8;
+  margin: 160px auto;
+}
+
+.calc__header {
+  width: 136px;
+  height: 36px;
+  margin: 0 auto;
+  position: relative;
+  padding-top: 16px;
+  margin-bottom: 50px;
+}
+
+.header-logo__title {
+  padding-left: 41px;
+  font-size: 19px;
+  color: #535353;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.header-logo__title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 20px;
+  background-image: url(../images/Pi-number.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 33px;
+  height: 33px;
+}
+
+.header-logo__subtitle {
+  padding-left: 41px;
+  letter-spacing: 8px;
+  color: #535353;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.leasing__title {
+  font-size: 25px;
+  color: #55197d;
+  font-weight: 700;
+  margin: 0 auto;
+  text-align: center;
+  width: 259px;
+  height: 55px;
+  line-height: 30px;
+  margin-bottom: 25px;
+}
+
+.leasing__calc-content {
+  width: 234px;
+  margin: 0 auto;
+}
+
+.leasing__calc-text {
+  font-size: 12px;
+  color: #55197d;
+  font-weight: 400;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.input-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;  
+}
+
+.min__value,
+.max__value {
+  font-size: 12px;
+  color: #a6a6a6;
+  font-weight: 400;
+  margin-top: -2px;
+}
+
+.summ__text {
+  font-size: 15px;
+  color: #55197d;
+  font-weight: 700;
+  padding-left: 5px;
+  padding-right: 10px;
+}
+
+.month__text {
+  padding-right: 8px;
+  position: relative;
+}
+
+.wrapper__summ {
+  display: flex;
+  margin-bottom: 30px;  
+}
+.summ {
+  margin-top: -8px;
+  font-size: 12px;
+  color: #ffffff;
+  font-weight: 700;
+  width: 91px;
+  height: 31px;
+  border-radius: 16px;
+  background-color: #55197d;
+  border: transparent;
+  text-align: center;
+  outline: none;
+}
+
+.range__slider {
+  width: 154px;
+  -webkit-appearance: none;
+  height: 7px;
+  border-radius: 4px;
+  background: #cacaca;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  background-image: linear-gradient(#55197d, #55197d);
+  background-size: 0 100%;
+  background-repeat: no-repeat;  
+}
+
+.range__slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: #fff;
+  border: 6px solid #55197d;
+  cursor: pointer;
+}
+
+.range__slider::-moz-range-thumb {
+  appearance: none;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #fff;
+  border: 6px solid #55197d;
+  cursor: pointer;
+}
+
+.range__slider::-ms-fill-upper {
+  background-color: #cacaca;
+  height: 9px;
+  border-radius: 4px;
+}
+.range__slider::-ms-track {
+  color: transparent;
+}
+.range__slider::-ms-fill-lower {
+  background-color: #55197d;
+  height: 9px;
+  border-radius: 4px;
+}
+
+.range__slider::-ms-ticks-before,
+.range__slider::-ms-ticks-after {
+  display: block;
+}
+.total__credit-summ {
+  font-size: 20px;
+  color: #696969;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.monthly__payment {
+  font-size: 25px;
+  color: #55197d;
+  font-weight: 400;
+  text-align: center;
+  line-height: 32px;
+}
+
+.monthly__payment-value {
+  font-size: 25px;
+  color: #55197d;
+  font-weight: 700;
+  text-align: center;
+}
+
+.button {
+  text-align: center;
+  margin-top: 18px;
+}
+
+.button__link {
+  display: inline-block;
+  width: 255px;
+  height: 32px;
+  padding: 8px 15px;
+  border-radius: 16px;
+  background-color: #55197d;
+  font-size: 15px;
+  color: #ffffff;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.footer__text {
+  margin: 0 auto;
+  width: 283px;
+  height: 63px;
+  font-size: 10px;
+  line-height: 15px;
+  color: #9e9e9e;
+  font-weight: 400;
+  text-align: center;
+}
