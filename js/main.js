@@ -40,11 +40,15 @@ window.onload = function () {
 
 const calculation = (loanSumm = 750, creditTerm = 3) => {
   let monthlyPayment;
+  let totalCredit;
   let numberOfMonths = creditTerm;
-  let interestRate = (9 * 0.01);
-  let totalCredit = (+loanSumm + (((loanSumm * interestRate) / 12) * numberOfMonths)).toFixed(2);
-
-  monthlyPayment = (totalCredit / numberOfMonths).toFixed(2);
+  let interestRate = 9 /100 / 12;
+  
+  
+  monthlyPayment = (loanSumm * interestRate * (Math.pow(1 + interestRate, numberOfMonths)) / (Math.pow(1 + interestRate, numberOfMonths) - 1)).toFixed(2);
+  totalCredit = (+loanSumm + ((loanSumm * interestRate) * numberOfMonths)).toFixed(2);
+  
+  
 
   if (loanSumm < 750 || creditTerm < 3) {
     return (
@@ -62,7 +66,6 @@ const calculation = (loanSumm = 750, creditTerm = 3) => {
     totalCreditSumm.innerHTML = `${totalCredit}€`;
     totalMonthlyPayment.innerHTML = `${monthlyPayment}€`;
   }
-  
 };
 
 const rangeInputs = document.querySelectorAll(".range__slider");
@@ -82,5 +85,3 @@ function handleInputChange(e) {
 rangeInputs.forEach((input) => {
   input.addEventListener("input", handleInputChange);
 });
-
-
