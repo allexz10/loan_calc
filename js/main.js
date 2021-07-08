@@ -23,13 +23,14 @@ assingValue();
 
 for (let input of inputsRange) {
   input.addEventListener("input", () => {
-    assingValue();
+    assingValue();    
     calculation(loanSumm.value, creditTerm.value);
   });
 }
 
 for (let value of inputValue) {
   value.addEventListener("input", () => {
+    assingRange();
     calculation(loanSumm.value, creditTerm.value);
   });
 }
@@ -46,7 +47,7 @@ const calculation = (loanSumm = 750, creditTerm = 3) => {
   
   
   monthlyPayment = (loanSumm * interestRate * (Math.pow(1 + interestRate, numberOfMonths)) / (Math.pow(1 + interestRate, numberOfMonths) - 1)).toFixed(2);
-  totalCredit = (+loanSumm + ((loanSumm * interestRate) * numberOfMonths)).toFixed(2);
+  totalCredit = (monthlyPayment * numberOfMonths).toFixed(2);
   
   
 
