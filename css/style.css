@@ -127,11 +127,19 @@ input[type="number"]::-webkit-outer-spin-button {
   font-weight: 700;
   padding-left: 5px;
   padding-right: 10px;
-}
-
-.month__text {
-  padding-right: 8px;
   position: relative;
+}
+.summ__text::before{
+content: 'mēn';
+position: absolute;
+top: 106px;
+left: 119px;
+font-size: 12px;
+color: #fff;
+font-weight: 700;
+}
+.month__text {
+  padding-right: 8px; 
 }
 
 .wrapper__summ {
@@ -141,7 +149,7 @@ input[type="number"]::-webkit-outer-spin-button {
 .summ {
   margin-top: -8px;
   font-size: 12px;
-  color: #ffffff;
+  color: #fff;
   font-weight: 700;
   width: 91px;
   height: 31px;
@@ -150,6 +158,9 @@ input[type="number"]::-webkit-outer-spin-button {
   border: transparent;
   text-align: center;
   outline: none;
+}
+.summ__month {
+  padding-right: 32px;
 }
 
 .range__slider {
@@ -164,6 +175,10 @@ input[type="number"]::-webkit-outer-spin-button {
   background-image: linear-gradient(#55197d, #55197d);
   background-size: 0 100%;
   background-repeat: no-repeat;
+  
+}
+.range__slider-loan{
+  background-size: 40% 100%;
 }
 
 .range__slider::-webkit-slider-thumb {
@@ -174,7 +189,7 @@ input[type="number"]::-webkit-outer-spin-button {
   border-radius: 50%;
   background: #fff;
   border: 6px solid #55197d;
-  cursor: pointer;
+  cursor: pointer;  
 }
 
 .range__slider::-moz-range-thumb {

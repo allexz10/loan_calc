@@ -17,23 +17,30 @@ const assingValue = () => {
   creditTerm.value = creditTermRange.value;
 };
 
+
+
 const assingRange = () => {
   loanSummRange.value = loanSumm.value;
   creditTermRange.value = creditTerm.value;
 };
 assingValue();
 
+
+    
+
+
+
 for (let input of inputsRange) {
   input.addEventListener("input", () => {
     assingValue();
-    calculation(loanSumm.value, creditTerm.value);
+    calculation(loanSumm.value, creditTerm.value);    
   });
 }
 
 for (let value of inputValue) {
   value.addEventListener("input", () => {
     assingRange();
-    calculation(loanSumm.value, creditTerm.value);
+    calculation(loanSumm.value, creditTerm.value);    
   });
 }
 
@@ -74,12 +81,13 @@ const calculation = (loanSumm = 750, creditTerm = 3) => {
 };
 //-------------------- input range background --------------------
 
-const rangeInputs = document.querySelectorAll(".range__slider");
+const rangeInputs = document.querySelectorAll('input[type="range"]');
+const numberInput = document.querySelectorAll('input[type="number"]');
 
 function handleInputChange(e) {
   let target = e.target;
   if (e.target.type !== "range") {
-    target = document.getElementById("range");
+    target = document.querySelectorAll(".range__slider");
   }
   const min = target.min;
   const max = target.max;
@@ -97,7 +105,7 @@ rangeInputs.forEach((input) => {
 window.addEventListener("Storage", function (e) {});
 
 if (!localStorage.Loan) localStorage.Loan = "0";
-localStorage.getItem("Loan","");
+localStorage.getItem("Loan", "");
 loanSumm.onclick = () => {
   localStorage.Loan++;
 };
