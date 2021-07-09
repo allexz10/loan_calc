@@ -94,16 +94,16 @@ rangeInputs.forEach((input) => {
 
 //------------------ localStorage -----------------
 
-window.addEventListener("storage", function (e) {});
+window.addEventListener("Storage", function (e) {});
 
 if (!localStorage.Loan) localStorage.Loan = "0";
-
+localStorage.getItem("Loan","");
 loanSumm.onclick = () => {
   localStorage.Loan++;
 };
 
 if (!localStorage.Months) localStorage.Months = "0";
-
+localStorage.getItem("Months", "");
 creditTerm.onclick = () => {
   localStorage.Months++;
 };
