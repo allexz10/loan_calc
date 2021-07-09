@@ -1,3 +1,5 @@
+//----------------------- inputs -------------------------
+
 const loanSumm = document.getElementById("loan-summ");
 const creditTerm = document.getElementById("credit-term");
 
@@ -23,7 +25,7 @@ assingValue();
 
 for (let input of inputsRange) {
   input.addEventListener("input", () => {
-    assingValue();    
+    assingValue();
     calculation(loanSumm.value, creditTerm.value);
   });
 }
@@ -39,17 +41,19 @@ window.onload = function () {
   calculation(loanSumm.value, creditTerm.value);
 };
 
+//--------------------- Calculator formula ------------------
+
 const calculation = (loanSumm = 750, creditTerm = 3) => {
   let monthlyPayment;
   let totalCredit;
   let numberOfMonths = creditTerm;
-  let interestRate = 9 /100 / 12;
-  
-  
-  monthlyPayment = (loanSumm * interestRate * (Math.pow(1 + interestRate, numberOfMonths)) / (Math.pow(1 + interestRate, numberOfMonths) - 1)).toFixed(2);
+  let interestRate = 9 / 100 / 12;
+
+  monthlyPayment = (
+    (loanSumm * interestRate * Math.pow(1 + interestRate, numberOfMonths)) /
+    (Math.pow(1 + interestRate, numberOfMonths) - 1)
+  ).toFixed(2);
   totalCredit = (monthlyPayment * numberOfMonths).toFixed(2);
-  
-  
 
   if (loanSumm < 750 || creditTerm < 3) {
     return (
@@ -68,6 +72,7 @@ const calculation = (loanSumm = 750, creditTerm = 3) => {
     totalMonthlyPayment.innerHTML = `${monthlyPayment}€`;
   }
 };
+//-------------------- input range background --------------------
 
 const rangeInputs = document.querySelectorAll(".range__slider");
 
@@ -86,3 +91,19 @@ function handleInputChange(e) {
 rangeInputs.forEach((input) => {
   input.addEventListener("input", handleInputChange);
 });
+
+//------------------ localStorage -----------------
+
+window.addEventListener("storage", function (e) {});
+
+if (!localStorage.Loan) localStorage.Loan = "0";
+
+loanSumm.onclick = () => {
+  localStorage.Loan++;
+};
+
+if (!localStorage.Months) localStorage.Months = "0";
+
+creditTerm.onclick = () => {
+  localStorage.Months++;
+};

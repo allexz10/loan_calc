@@ -14,8 +14,7 @@
   </head>
 
   <body>
-    <div class="calc">
-     
+    <div class="calc">     
       <div class="calc__header">
         <h3 class="header-logo__title">Syndicate</h3>
         <h3 class="header-logo__subtitle">Banka</h3>
@@ -32,6 +31,7 @@
             max="7500"
             type="range"
             value="750"
+            onclick="click()"
           />
           <div class="max__value">7500€</div>
         </div>
@@ -45,6 +45,7 @@
             min="750"
             max="7500"            
             maxlength="4"
+            onclick="click()"
             oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
           />
         </div>
@@ -59,6 +60,7 @@
             max="72"
             type="range"
             value="3"
+            onclick="click()"
           />                   
           <div class="max__value">72</div>
         </div>
@@ -72,6 +74,7 @@
             min="3"
             max="72"            
             maxlength="2"
+            onclick="click()"
             oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
           />
         </div>        
