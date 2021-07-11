@@ -17,30 +17,23 @@ const assingValue = () => {
   creditTerm.value = creditTermRange.value;
 };
 
-
-
 const assingRange = () => {
   loanSummRange.value = loanSumm.value;
   creditTermRange.value = creditTerm.value;
 };
 assingValue();
 
-
-    
-
-
-
 for (let input of inputsRange) {
   input.addEventListener("input", () => {
     assingValue();
-    calculation(loanSumm.value, creditTerm.value);    
+    calculation(loanSumm.value, creditTerm.value);
   });
 }
 
 for (let value of inputValue) {
   value.addEventListener("input", () => {
     assingRange();
-    calculation(loanSumm.value, creditTerm.value);    
+    calculation(loanSumm.value, creditTerm.value);
   });
 }
 
@@ -48,9 +41,22 @@ window.onload = function () {
   calculation(loanSumm.value, creditTerm.value);
 };
 
-//--------------------- Calculator formula ------------------
+//------------------------ input validation ------------------------
 
-const calculation = (loanSumm = 750, creditTerm = 3) => {
+loanSumm.oninput = function () {
+  if (this.value.length > this.maxLength)
+    this.value = this.value.slice(0, this.maxLength);
+  this.value = this.value.replace(/[^\d]/g, "");
+};
+creditTerm.oninput = function () {
+  if (this.value.length > this.maxLength)
+    this.value = this.value.slice(0, this.maxLength);
+  this.value = this.value.replace(/[^\d]/, "");
+};
+
+//--------------------- Calculator ------------------
+
+const calculation = (loanSumm = "750", creditTerm = "3") => {
   let monthlyPayment;
   let totalCredit;
   let numberOfMonths = creditTerm;
@@ -60,7 +66,7 @@ const calculation = (loanSumm = 750, creditTerm = 3) => {
     (loanSumm * interestRate * Math.pow(1 + interestRate, numberOfMonths)) /
     (Math.pow(1 + interestRate, numberOfMonths) - 1)
   ).toFixed(2);
-  totalCredit = (monthlyPayment * numberOfMonths).toFixed(2);
+  totalCredit = Math.round(monthlyPayment * numberOfMonths);
 
   if (loanSumm < 750 || creditTerm < 3) {
     return (
@@ -79,6 +85,7 @@ const calculation = (loanSumm = 750, creditTerm = 3) => {
     totalMonthlyPayment.innerHTML = `${monthlyPayment}€`;
   }
 };
+
 //-------------------- input range background --------------------
 
 const rangeInputs = document.querySelectorAll('input[type="range"]');
@@ -115,3 +122,5 @@ localStorage.getItem("Months", "");
 creditTerm.onclick = () => {
   localStorage.Months++;
 };
+
+//--------------------------------------------------
