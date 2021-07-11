@@ -116,7 +116,7 @@ a {
 .summ__text::before {
   content: "mēn";
   position: absolute;
-  top: calc(105px + 5%);
+  top: 106.5px;
   left: 119px;
   font-size: 12px;
   color: #fff;
