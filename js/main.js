@@ -44,14 +44,10 @@ window.onload = function () {
 //------------------------ input validation ------------------------
 
 loanSumm.oninput = function () {
-  if (this.value.length > this.maxLength)
-    this.value = this.value.slice(0, this.maxLength);
-  this.value = this.value.replace(/[^\d]/g, "");
+  this.value = this.value.replace(/[^\d]/g, ""); 
 };
 creditTerm.oninput = function () {
-  if (this.value.length > this.maxLength)
-    this.value = this.value.slice(0, this.maxLength);
-  this.value = this.value.replace(/[^\d]/, "");
+  this.value = this.value.replace(/[^\d]/g, "");  
 };
 
 //--------------------- Calculator ------------------

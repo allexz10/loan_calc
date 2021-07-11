@@ -14,7 +14,7 @@
   </head>
 
   <body>
-    <div class="calc">     
+    <div class="calc">
       <div class="calc__header">
         <h3 class="header-logo__title">Syndicate</h3>
         <h3 class="header-logo__subtitle">Banka</h3>
@@ -24,14 +24,14 @@
         <div class="leasing__calc-text">Summa:</div>
         <div class="input-wrapper">
           <div class="min__value">750€</div>
-          <input            
+          <input
             class="range__slider range__slider-loan"
             id="loan-summ-range"
             min="750"
-            max="7500"             
+            max="7500"
             type="range"
-            value="3683"           
-            onclick="click()"            
+            value="3683"
+            onclick="click()"
           />
           <div class="max__value">7500€</div>
         </div>
@@ -40,10 +40,10 @@
           <input
             class="summ"
             id="loan-summ"
-            type="number"           
-            inputmode="numeric"           
+            type="text"
+            inputmode="numeric"
             min="750"
-            max="7500"                      
+            max="7500"
             maxlength="4"
             onclick="click()"
             oninput=""
@@ -54,14 +54,14 @@
           <div class="min__value">3</div>
           <input
             class="range__slider"
-            id="credit-term-range"            
+            id="credit-term-range"
             step="3"
             min="3"
             max="72"
             type="range"
             value="3"
-            onclick="click()"           
-          />                   
+            onclick="click()"
+          />
           <div class="max__value">72</div>
         </div>
         <div class="wrapper__summ">
@@ -70,25 +70,25 @@
             class="summ summ__month"
             id="credit-term"
             inputmode="numeric"
-            type="number"            
+            type="text"
             min="3"
-            max="72"            
+            max="72"
             maxlength="2"
             onclick="click()"
-            oninput=""           
+            oninput=""
           />
-        </div>        
+        </div>
       </form>
       <div class="total__credit-summ">
         Kredīta summa
         <span class="total__credit-summ--value" id="total-credit-summ"></span>
       </div>
-      <div class="monthly__payment" >
+      <div class="monthly__payment">
         Ikmēneša maksājums<br>
         <span class="monthly__payment-value" id="monthly-payment"></span>
       </div>
       <div class="button">
-        <a class="button__link" href="#">Pieteikties</a>
+        <a class="button__link" href="#"  target="_blank">Pieteikties</a>
       </div>
       <p class="footer__text">
         Kalkulatora aprēķinātie dati ir informatīvi un sniedz priekšstatu par
