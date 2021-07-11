@@ -23,7 +23,7 @@ a {
 .calc {
   max-width: 300px;
   max-height: 600px;
-  background-color: #f8f8f8;  
+  background-color: #f8f8f8;
   margin: auto;
   padding: 0;
 }
@@ -111,24 +111,25 @@ a {
   font-weight: 700;
   padding-left: 5px;
   padding-right: 10px;
-  position: relative;  
-}
-.summ__text::before {
-  content: "mēn";
-  position: absolute;
-  top: 106px;
-  left: 119px;
-  font-size: 12px;
-  color: #fff;
-  font-weight: 700;   
 }
 .month__text {
   padding-right: 8px;
 }
 
+.month__text::after {
+  content: "mēn";
+  position: absolute;
+  top: 1px;
+  left: 120px;
+  font-size: 12px;
+  color: #fff;
+  font-weight: 700;
+}
+
 .wrapper__summ {
   display: flex;
   margin-bottom: 30px;
+  position: relative;
 }
 .summ {
   margin-top: -8px;
@@ -179,7 +180,7 @@ a {
   height: 8px;
   border-radius: 50%;
   background: #fff;
-  border: 6px solid #55197d; 
+  border: 6px solid #55197d;
   cursor: pointer;
   position: absolute;
 }
